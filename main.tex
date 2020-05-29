@@ -97,11 +97,56 @@ cosmology: large-scale structure of Universe -- methods: data analysis.
 
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 \section{Introduction}
-The cosmic web is the pattern of the matter distribution in the universe on the largest scales (about a hundred megaparsecs). It is generally agreed that this structure is the result of the perturbations in the density field at the beginning of the universe driven entirely by the gravitational force \cite{cosmic_web}. This makes the structure of cosmic web an interesting and important object to study, because it helps us understand the formation and evolution of galaxies \cite{Cautun_2014}. \\
-There are several approaches to describe the structure of the cosmic web. One of the most commonly used is based on the distribution of matter in the universe being a scalar field that varies point to point. In this framework the main goal is to identify low and high density structures, such as voids, knots, filaments and sheets \cite{2018MNRAS.473.1195L}. Another approach treats galaxies and dark matter halos as punctual objects, hence a discrete distribution of matter is considered. In order to describe these last distributions researchers have used geometry and graph theory concepts such as the Voronoi diagram \cite{voronoi} and the $\beta$-skeleton \cite{beta_skeleton}.\\
-As to how to describe these graphs, there are several options, such as the average number of connections, the average length of the edges, or even the average direction for a direct graph. Another possible quantity is the probability distribution over the possible numbers of connections. This distribution tells us how connected are the nodes in the graph and how homogeneous the graph is. \\
-There is a measure of structure called statistical complexity for systems in which it is possible to define a probability distribution. Although there is more than one definition for the statistical complexity every one of them vanishes for fully certain and fully random systems. The reason being that neither of such extremes in randomness have structure \cite{grassberg} \cite{HUBERMAN1986376}. The authors that have worked on this problem define the complexity as the product of the entropy $S$ and a term called disequilibrium $D$ \cite{lopez_comp}. The purpose of the disequilibrium is to be zero for the fully random distribution (i.e. the uniform distribution). There has been attempts to find an appropriate expression for $D$, and some problems that have arisen are the dependence with entropy and with the size of the system.\\
-In this work we use the $\beta$-skelton graph to study the structure of the cosmic web. We then apply the definition of statistical complexity introduced by \cite{sig_com} to the resulting graph to compute the complexity of the cosmic web. Similar information theory concepts have been used in other physical subjects like quantum and statistical mechanics \cite{comp_quantum} and observational astrophysics \cite{comp_astro}.  
+The cosmic web is the pattern of the matter distribution in the
+universe on the largest scales (about a hundred megaparsecs). 
+It is generally agreed that this structure is the result of the
+perturbations in the density field at the beginning of the universe
+driven entirely by the gravitational force \cite{cosmic_web}. 
+This makes the structure of cosmic web an interesting and important object
+to study, because it helps us understand the formation and evolution
+of galaxies \cite{Cautun_2014}.
+
+There are several approaches to describe the structure of the cosmic
+web. One of the most commonly used is based on the distribution of
+matter in the universe being a scalar field that varies point to
+point. In this framework the main goal is to identify low and high
+density structures, such as voids, knots, filaments and sheets
+\cite{2018MNRAS.473.1195L}. Another approach treats galaxies and dark
+matter halos as punctual objects, hence a discrete distribution of
+matter is considered. In order to describe these last distributions
+researchers have used geometry and graph theory concepts such as the
+Voronoi diagram \cite{voronoi} and the $\beta$-skeleton
+\cite{beta_skeleton}.
+
+As to how to describe these graphs, there are several options, such as
+the average number of connections, the average length of the edges, or
+even the average direction for a direct graph. Another possible
+quantity is the probability distribution over the possible numbers of
+connections. This distribution tells us how connected are the nodes in
+the graph and how homogeneous the graph is.
+
+There is a measure of structure called statistical complexity for
+systems in which it is possible to define a probability
+distribution. Although there is more than one definition for the
+statistical complexity every one of them vanishes for fully certain
+and fully random systems. The reason being that neither of such
+extremes in randomness have structure \cite{grassberg}
+\cite{HUBERMAN1986376}. The authors that have worked on this problem
+define the complexity as the product of the entropy $S$ and a term
+called disequilibrium $D$ \cite{lopez_comp}. The purpose of the
+disequilibrium is to be zero for the fully random distribution
+(i.e. the uniform distribution). There has been attempts to find an
+appropriate expression for $D$, and some problems that have arisen are
+the dependence with entropy and with the size of the system.
+
+In this work we use the $\beta$-skelton graph to study the structure
+of the cosmic web. We then apply the definition of statistical
+complexity introduced by \cite{sig_com} to the resulting graph to
+compute the complexity of the cosmic web. Similar information theory
+concepts have been used in other physical subjects like quantum and
+statistical mechanics \cite{comp_quantum} and observational
+astrophysics \cite{comp_astro}.   
+
 \section{Graphs and Complexity}
 
 \subsection{The Beta-Skeleton Graph}
@@ -126,10 +171,26 @@ more disconnected.
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{betaskeleton.pdf}
-    \caption{Exclusion region in the $\beta$-skeleton for different values of $\beta$. If beta is less than 1 the exclusion region is defined as the intersection between the two circles of radius $d/\beta$ that pass through the points. For beta larger than 1 the exclusion region is the intersection between the two circles with diameter $d\beta$ that pass through one of the points while the other lies on a diameter.}
+    \caption{Exclusion region in the $\beta$-skeleton for different values of $\beta$. If beta is less than 1 the exclusion region is defined as the intersection between the two circles of radius $d/\beta$ that pass through the points. For $\beta>1$ the exclusion region is the intersection between the two circles with diameter $d\beta$ that pass through one of the points while the other lies on a diameter.}
     \label{fig:bskeleton_area}
 \end{figure}
 \subsection{Graph Complexity Definition}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{svb.pdf}
+    \caption{Entropy as a function of $\beta$ for random and simulated points.}
+    \label{fig:svb}
+\end{figure}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.45\textwidth]{cvb_viejo.pdf}
+    \includegraphics[width=0.45\textwidth]{cvb_inicial.pdf}
+    \caption{First definition of complexity as a function of $\beta$
+      for random and simulated points.} 
+    \label{fig:cvb_viejo} 
+\end{figure*}
 
 Once the graph is constructed the probability of a node having $n$
 connections can be calculated as $p_n=N_{n}/T$. Where $N_{n}$ is the
@@ -361,30 +422,15 @@ XDL acknowledges the support from NSFC grant (No. 11803094).
 \bibliographystyle{mnras}
 \bibliography{references}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{cvb_viejo.pdf}
-    \caption{First definition of complexity as a function of $\beta$ for random and simulated points.}
-    \label{fig:cvb_viejo}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{svb.pdf}
-    \caption{Entropy as a function of $\beta$ for random and simulated points.}
-    \label{fig:svb}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{cvs_viejo.pdf}
-    \caption{First definition of complexity versus entropy for random and simulated points.}
-    \label{fig:cvs_viejo}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{cvb_inicial.pdf}
-    \caption{Complexity as a function of $\beta$.}
-    \label{fig:cvb}
-\end{figure}
+
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.45\textwidth]{cvs_viejo.pdf}
+%    \caption{First definition of complexity versus entropy for random and simulated points.}
+%    \label{fig:cvs_viejo}
+%\end{figure}
+
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{cvs.pdf}
@@ -412,10 +458,11 @@ XDL acknowledges the support from NSFC grant (No. 11803094).
     \caption{Complexity as a function of $\sigma_{8}$ for $\beta=5.0$. The Spearman's correlation coefficient is 0.511, the largest for the cosmological parameters considered.}
     \label{fig:cvsigma8}
 \end{figure}
-\begin{figure*}
+
+\begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{cvb_porc.pdf}
+    \includegraphics[width=0.5\textwidth]{cvb_porc.pdf}
     \caption{Complexity as a function of $\beta$ for several percentages of sampled points.}
     \label{fig:cvb_porcentaje}
-\end{figure*}
+\end{figure}
 \end{document}
