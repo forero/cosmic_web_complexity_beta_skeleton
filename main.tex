@@ -94,7 +94,11 @@ cosmology: large-scale structure of Universe -- methods: data analysis.
 
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 \section{Introduction}
-
+The cosmic web is the pattern of the matter distribution in the universe on the largest scales (about a hundred megaparsecs). It is generally agreed that this structure is the result of the perturbations in the density field at the beginning of the universe driven entirely by the gravitational force \cite{cosmic_web}. This makes the structure of cosmic web an interesting and important object to study, because it helps us understand the formation and evolution of galaxies \cite{Cautun_2014}. \\
+There are several approaches to describe the structure of the cosmic web. One of the most commonly used is based on the distribution of matter in the universe being a scalar field that varies point to point. In this framework the main goal is to identify low and high density structures, such as voids, knots, filaments and sheets \cite{2018MNRAS.473.1195L}. Another approach treats galaxies and dark matter halos as punctual objects, hence a discrete distribution of matter is considered. In order to describe these last distributions researchers have used geometry and graph theory concepts such as the Voronoi diagram \cite{voronoi} and the $\beta$-skeleton \cite{beta_skeleton}.\\
+As to how to describe these graphs, there are several options, such as the average number of connections, the average length of the edges, or even the average direction for a direct graph. Another possible quantity is the probability distribution over the possible numbers of connections. This distribution tells us how connected are the nodes in the graph and how homogeneous the graph is. \\
+There is a measure of structure called statistical complexity for systems in which it is possible to define a probability distribution. Although there is more than one definition for the statistical complexity every one of them vanishes for fully certain and fully random systems. The reason being that neither of such extremes in randomness have structure \cite{grassberg} \cite{HUBERMAN1986376}. The authors that have worked on this problem define the complexity as the product of the entropy $S$ and a term called disequilibrium $D$ \cite{lopez_comp}. The purpose of the disequilibrium is to be zero for the fully random distribution (i.e. the uniform distribution). There has been attempts to find an appropriate expression for $D$, and some problems that have arisen are the dependence with entropy and with the size of the system.\\
+In this work we use the $\beta$-skelton graph to study the structure of the cosmic web. We then apply the definition of statistical complexity introduced by \cite{sig_com} to the resulting graph to compute the complexity of the cosmic web. Similar information theory concepts have been used in other physical subjects like quantum and statistical mechanics \cite{comp_quantum} and observational astrophysics \cite{comp_astro}.  
 \section{Graphs and Complexity}
 
 \subsection{The Beta-Skeleton Graph}
@@ -116,12 +120,12 @@ more disconnected.
     \caption{The two possible scenarios for the Gabriel graph. On the left side the points $a$ and $b$ are connected since the third point is outside the colored region. On the right side the third point is inside the region and the points $a$ and $b$ are disconnected.}
     \label{fig:gabriel}
 \end{figure}
-\begin{figure*}
+\begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{betaskeleton.pdf}
+    \includegraphics[width=0.45\textwidth]{betaskeleton.pdf}
     \caption{Exclusion region in the $\beta$-skeleton for different values of $\beta$. If beta is less than 1 the exclusion region is defined as the intersection between the two circles of radius $d/\beta$ that pass through the points. For beta larger than 1 the exclusion region is the intersection between the two circles with diameter $d\beta$ that pass through one of the points while the other lies on a diameter.}
     \label{fig:bskeleton_area}
-\end{figure*}
+\end{figure}
 \subsection{Graph Complexity Definition}
 
 Once the graph is constructed the probability of a node having $n$
